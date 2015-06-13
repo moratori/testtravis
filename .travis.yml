@@ -11,7 +11,7 @@ install:
 
 script:
   - ros -s prove -s cl-coveralls 
-    -e '(or (coveralls:with-coveralls (:execlude "t") 
+    -e '(or (coveralls:with-coveralls (:exclude "t") 
                 (prove:run :testtravis-test))
             (uiop:quit -1))'
 

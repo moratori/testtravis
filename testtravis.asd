@@ -14,7 +14,8 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "testtravis"))))
+                ((:file "testtravis") 
+                 (:file "mod"))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

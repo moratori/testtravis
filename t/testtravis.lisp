@@ -18,5 +18,6 @@
 (is (+ 1 1) (1+ 1))
 (is (greeting "nyan neko") "nyan neko")
 (is 0 0)
+(is 1 1)
 
 (finalize)

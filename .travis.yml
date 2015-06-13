@@ -7,6 +7,11 @@ env:
 
 install:
   - curl -L https://raw.githubusercontent.com/snmsts/roswell/master/scripts/install-for-ci.sh | sh
+  - export PATH=~/.roswell/bin:$PATH
 
 script:
   - ros -s prove -e '(prove:run :testtravis-test)'
+
+notifications:
+  email:
+    - teldev@live.jp

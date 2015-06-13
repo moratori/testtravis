@@ -3,14 +3,17 @@ sudo: required
 
 env:
   matrix:
-    - LISP=sbcl
+    - LISP=sbcl COVERALLS=true
 
 install:
   - curl -L https://raw.githubusercontent.com/snmsts/roswell/master/scripts/install-for-ci.sh | sh
   - export PATH=~/.roswell/bin:$PATH
 
 script:
-  - ros -s prove -e '(prove:run :testtravis-test)'
+  - ros -s prove -s cl-coveralls 
+    -e '(or (coveralls:with-coveralls (:execlude "t") 
+                (prove:run :testtravis-test))
+            (uiop:quit -1))'
 
 notifications:
   email:

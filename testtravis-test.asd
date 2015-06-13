@@ -14,7 +14,8 @@
                :prove)
   :components ((:module "t"
                 :components
-                ((:test-file "testtravis"))))
+                ((:test-file "testtravis")
+                 (:test-file "mod"))))
 
   :defsystem-depends-on (:prove-asdf)
   :perform (test-op :after (op c)

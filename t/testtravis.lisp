@@ -2,7 +2,6 @@
 (defpackage testtravis-test
   (:use :cl
         :testtravis
-        :testtravis.mod
         :prove))
 (in-package :testtravis-test)
 
@@ -11,12 +10,10 @@
 
 (plan 5)
 
-;; blah blah blah.
 
 (is (fact 5) 120)
 (isnt (fact 4) 33)
 (is (+ 1 1) (1+ 1))
-(is (greeting "nyan neko") "nyan neko")
 (is 0 0)
 (is 1 1)
 
